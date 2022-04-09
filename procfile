@@ -1,1 +1,1 @@
-web application app:app
+web: gunicron app:app
