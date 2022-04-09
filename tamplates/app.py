@@ -15,7 +15,7 @@ def home():
     
     return render_template("index.html")
 
-@app.route('/prediction', methods=['GET', 'POST'])
+@app.route('./prediction.html', methods=['GET', 'POST'])
 def prediction():
     if request.method == 'POST':
         news = request.form['news']
@@ -23,9 +23,9 @@ def prediction():
         predict = model.predict(vactor.transform([news]))[0]
         print(predict)
         
-        return render_template("prediction.html", prediction_text="News headline is-> {}".format(predict))
+        return render_template("./prediction.html", prediction_text="News headline is-> {}".format(predict))
     else:
-      return render_template("prediction.html")
+      return render_template("./prediction.html")
 
 
 
